@@ -1,0 +1,15 @@
+1,1TB Hard Drive,500,5,1250,1TB_HDD.jpg
+2,750 GB Solid State Drive,1200,7,1950,750GB_SSD.jpg
+3,GeForce GTX 1060,2500,3,3250,GTX1060.jpg
+4,GeForce GTX 1050,2300,4,3050,GTX1050.jpg
+5,Radeon RX 580 Red,1750,5,2500,RX580.jpg
+6,G.Skill 16GB RAM TridentZ RGB Series,2500,7,3250,GSkill_RGB_RAM.jpg
+7,Corsair Vengance LPX 4GB RAM ,500,11,1250,Corsair_Vengance_RAM.jpg
+8,Intel Core i5-8600K 3.6GHz Coffee Lake,3500,9,4250,i5-8600k.jpg
+9,Intel Core i7-8700K 3.7GHz Coffee Lake,3700,14,4450,i7-8700k.jpg
+10,AMD Ryzen 5 1600 3.2GHz,1800,17,2550,ryzen-5.jpg
+11,Asus Prime Z370-P LGA1151 Intel Z370 Motherboard,2800,9,3550,Asus-Prime_motherboard.png
+12,Biostar TB250-BTC PRO Ver. 6.x Intel LGA1151 Motherboard,2100,14,2850,Biostar_motherboard.jpg
+13,Super Flower 550W PSU,500,20,1250,Super_Flower_PSU.jpg
+14,ASUS DSL-AC55U AC1200 Dual-Band Wireless ADSL/VDSL Modem,750,30,1500,ASUS_Modem.jpg
+15,Phankteks PH-EC416PSTG_BK Eclipse P400S Silent,3000,5,3750,Phanteks_Chasis.jpg
