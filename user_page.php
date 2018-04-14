@@ -68,12 +68,14 @@
 					echo "<td> $itemBreakdown[1] </td>";
 					echo "<td> $itemBreakdown[3] </td>";
 					echo "<td><img src=\"images\\$itemBreakdown[5]\" height=\"75\" width=\"75\"/></td>";
-					echo "<td><button type=\"button\">&#128722</button></td>";//TODO: Give button unique identifier (ID from db)
+					// button linking in form found at: https://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link
+					//hidden value method found at: https://stackoverflow.com/questions/19814082/passing-a-value-through-button-to-php-function
+					$hiddenSellPrice = $itemBreakdown[4];
+					echo "<td><form action=\"checkout.php\" method=\"post\"><input type=\"submit\" value=\"&#128722\"/><input type=\"hidden\" name=\"sellPrice\" value=\"$hiddenSellPrice\"></form></td>";
 					echo "</tr>";
 				}
 				?></table><?php
 			}
-
 			displayUserInfo();
 			populateTables();
 		?>
