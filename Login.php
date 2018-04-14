@@ -27,9 +27,11 @@ will be referenced -->
 				?>
 				<div class="container position-fixed">
 					<form action="<?php $_SERVER['SCRIPT_FILENAME']?>" method="post">
-					<input type="email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];}?>" name="email" placeholder="Please Enter Your Email" required/>
-					<input type="password" name="password" placeholder="Enter your password" required/>
-					<input type="submit" name="submit" value="Login"/>
+						<input type="email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];}?>" name="email" placeholder="Please Enter Your Email" required/>
+						<input type="password" name="password" placeholder="Enter your password" required/>
+						<input type="submit" name="submit" value="Login"/>
+					</form>
+					<a href="Register.php"><button type="button">Register</button></a>
 				</div>
 				<?php
 			}
@@ -52,7 +54,7 @@ will be referenced -->
 				}
 				else
 				{
-					echo "entered";
+					echo "Entered Incorrect information";
 					login();
 				}
 				closeConnection($myConn);
