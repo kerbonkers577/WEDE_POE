@@ -10,7 +10,7 @@
 
 	include("DBConn.php");
 
-	$users = file("users.txt");
+	$users = file("includes/users.txt");
 
 
 
@@ -36,14 +36,14 @@
 		$recreated = query($myConn, "SELECT * from tbl_User");
 		if($recreated !== null)//Checks if new database creation was successful
 		{
-			echo "Recreation successful";
+			//echo "Recreation successful";
 			foreach ($users as $value)
 			{//Populates database
 				echo "<pre>";
 				$user = explode(",",$value);
-				//echo $user[0]." ".$user[1]." ".$user[2]." ".$user[3]. " " .$user[4];
-				query($myConn, "INSERT INTO tbl_user(ID,FName,LName,Email,Password)
-												VALUES ($user[0],'$user[1]','$user[2]','$user[3]','$user[4]');
+				echo $user[0]." ".$user[1]." ".$user[2]." ".$user[3];
+				query($myConn, "INSERT INTO tbl_user(FName,LName,Email,Password)
+												VALUES ('$user[0]','$user[1]','$user[2]','$user[3]');
 												");
 				echo "</pre>";
 			}
@@ -83,13 +83,6 @@
 			}
 		}
 	}
-	/*
-	foreach($selectResult as $row)
-	{
-		echo "<pre>";
-		print_r($row);
-		echo "</pre>";
-	}*/
 
 	closeConnection($myConn);
 

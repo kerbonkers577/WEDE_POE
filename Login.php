@@ -46,7 +46,8 @@ will be referenced -->
 				$result = mysqli_fetch_assoc(query($myConn, "SELECT Password FROM tbl_User where Email like '".$_POST["email"]."'"));
 				//print_r($result);
 
-				if(strcmp($result["Password"],md5($_POST['password'])) == 0)
+
+				if(strcmp(trim($result["Password"]),md5($_POST['password'])) == 0)
 				{
 					$user = mysqli_fetch_assoc(query($myConn, "SELECT FName,LName,Email FROM tbl_User where Email like '".$_POST["email"]."'"));
 					//print_r($user);

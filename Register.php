@@ -47,17 +47,24 @@
 				<?php
 		}
 
-		include_once("includes/DBConn.php");
+		//include_once("includes/DBConn.php");
+
 			if(isset($_POST["submit"]))
 			{
-				$myConn = connect();
+				//$myConn = connect();
 				$FName = $_POST["FName"];
 				$LName = $_POST["LName"];
 				$Email = $_POST["Email"];
 				$Password = md5($_POST["password"]);
+				/*
 				$queryString = "INSERT INTO tbl_User(FName, LName, Email, Password) VALUES ('$FName','$LName', '$Email', '$Password');";
 				query($myConn, $queryString);
-				closeConnection($myConn);
+				closeConnection($myConn);*/
+				$file = file("includes/users.txt");
+				$lineToAdd = "$FName,$LName,$Email,$Password\n";
+				array_push($file,$lineToAdd);
+				file_put_contents("includes/users.txt", $file);
+				include("includes/createTable.php");
 				registrationCompletePage();
 			}
 			else
