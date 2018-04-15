@@ -14,25 +14,28 @@ will be referenced -->
 	    <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	    <!-- Bootstrap CSS -->
-	    <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
+	    <!-- custom CSS found at: https://codepen.io/andrejmlinarevic/full/NGGdVv and https://codepen.io/aperyon/full/oxzpaE -->
+			<link href="CSS/CustomLogin.css" rel="stylesheet" type="text/css"/>
 
-	    <title>Login</title>
+	    <title>Store Page</title>
 	  </head>
-		<body>
+		<body class="body-custom">
 			<?php
 			include("includes/DBConn.php");
 			function login()
 			{
 				?>
-				<div class="container position-fixed">
+				<div class="container">
 					<form action="<?php $_SERVER['SCRIPT_FILENAME']?>" method="post">
-						<input type="email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];}?>" name="email" placeholder="Please Enter Your Email" required/>
-						<input type="password" name="password" placeholder="Enter your password" required/>
-						<input type="submit" name="submit" value="Login"/>
+						<header>Login</header></br>
+						<input type="email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];}?>" name="email" placeholder="Please Enter Your Email" required/></br>
+						<input type="password" name="password" placeholder="Enter your password" required/></br>
+						<input type="submit" class="submit submit-hover" name="submit" value="Login"/></br>
+						<a href="Register.php"><button type="button">Register</button></a>
 					</form>
-					<a href="Register.php"><button type="button">Register</button></a>
 				</div>
+
+
 				<?php
 			}
 

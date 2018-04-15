@@ -14,8 +14,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="CSS/bootstrap.min.css"/>
+	<!-- custom CSS found at: https://codepen.io/andrejmlinarevic/full/NGGdVv and https://codepen.io/aperyon/full/oxzpaE -->
+	<link href="CSS/CustomLogin.css" rel="stylesheet" type="text/css"/>
 	<title>Register</title>
 </head>
 	<body>
@@ -26,16 +26,16 @@
 		function registerPage()
 		{
 			?>
-			<h1>Welcome to the Registration Page</h1>
-			<div>
-				<form action="Register.php"method="post">
-					<input type="text" name="FName" placeholder="Enter Your First Name" id required/>
-					<input type="text" name="LName" placeholder="Enter Your Last Name" id required/>
-					<input type="email" name="Email" placeholder="Enter Your Email Address" id required/>
-					<input type="password" name="password" placeholder="Create a Password" id required/>
-					<button type="submit" name="submit">Register</button>
-				</form>
-			</div>
+			<form action="Register.php"method="post">
+				<header>Register With The Site</header>
+				<br />
+				<input type="text" name="FName" placeholder="Enter Your First Name" required/><br />
+				<input type="text" name="LName" placeholder="Enter Your Last Name" required/><br />
+				<input type="email" name="Email" placeholder="Enter Your Email Address" required/><br />
+				<input type="password" name="password" placeholder="Create a Password" required/><br />
+				<button type="submit" name="submit">Register</button>
+			</form>
+
 			<?php
 		}
 
