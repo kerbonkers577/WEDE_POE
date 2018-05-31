@@ -43,7 +43,7 @@
 		{
 				?>
 					<h1>Registration Complete!</h1>
-					<a href="Login.php">Return to the Login</a>
+					<a href="Index.php">Return to the Login</a>
 				<?php
 		}
 

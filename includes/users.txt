@@ -29,3 +29,5 @@ Aurora,Doe,au.doe@abc.co.za,4aef299d674135ce06964a106b05074e
 Zoe,Doe,zo.doe@abc.co.za,bd93b91d4a5e9a7a5fcd1fad5b9cb999
 Eli,Doe,eli.doe@abc.co.za,8c5417e43a817a5afde488b0c744fc0e
 John,Doe,abc@123.com,29ef52e7563626a96cea7f4b4085c124
+Tristan,Constable,tman@gmail.com,202cb962ac59075b964b07152d234b70
+t,Constable,abe@gmail.com,202cb962ac59075b964b07152d234b70

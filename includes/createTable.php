@@ -16,12 +16,12 @@
 
 	//Connection object
 	$myConn = connect();
-	echo echoHostInfo($myConn);
+	//echo echoHostInfo($myConn);
 	$selectResult = query($myConn, "SELECT * from tbl_User");
 
 	if($selectResult !== null)
 	{
-		echo "\ntable exists\n";
+		//echo "\ntable exists\n";
 
 		query($myConn, "DROP TABLE IF EXISTS tbl_User");
 		query($myConn, "CREATE TABLE tbl_User(
@@ -41,7 +41,7 @@
 			{//Populates database
 				echo "<pre>";
 				$user = explode(",",$value);
-				echo $user[0]." ".$user[1]." ".$user[2]." ".$user[3];
+				//echo $user[0]." ".$user[1]." ".$user[2]." ".$user[3];
 				query($myConn, "INSERT INTO tbl_user(FName,LName,Email,Password)
 												VALUES ('$user[0]','$user[1]','$user[2]','$user[3]');
 												");
