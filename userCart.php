@@ -8,6 +8,8 @@
 	  any code obtained from other sources
 	  will be referenced
 */
+
+	include_once("includes/aShopCart.php");
 	?>
 <html lang="en">
 <head>
@@ -16,12 +18,12 @@
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="CSS/bootstrap.min.css"/>
-	<title>Checkout</title>
+	<title>UserCart</title>
 </head>
 	<body>
-		<h1>Checkout</h1>
+		<h1>Cart</h1>
 		<?php
-			echo "Sell price: ".$_POST["sellPrice"];
+			
 		?>
 	</body>
 </html>
