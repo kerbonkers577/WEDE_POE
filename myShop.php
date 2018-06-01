@@ -11,12 +11,15 @@
     //This will load the aShopCart.php and its functions
     //This script will manage layout and navigation
 
+
     //Session should start on condition that user has logged in
     session_start();
     if(isset($_SESSION['shopCart']) == false)
     {
         $_SESSION['shopCart'] = array();
     }
+
+    print_r($_SESSION['shopCart']);
 ?>
 <!DOCTYPE html>
 <html>

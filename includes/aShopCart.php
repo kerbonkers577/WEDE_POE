@@ -21,9 +21,9 @@
 
          }
 
-         function setItemArray()
+         function setItemArray($newUserItems)
          {
-
+            $this->userItems = $newUserItems;
          }
 
          function getItemArray()
@@ -64,7 +64,7 @@
             foreach ($this->userItems as $item)
             {
                 echo "</tr>";
-                echo "<td>".$item."</td>";
+                echo "<tr><td>".$item."</td></tr>";
                 echo "</table>";
             }
          }

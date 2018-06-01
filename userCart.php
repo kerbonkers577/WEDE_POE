@@ -8,7 +8,7 @@
 	  any code obtained from other sources
 	  will be referenced
 */
-
+	session_start();
 	include_once("includes/aShopCart.php");
 	?>
 <html lang="en">
@@ -23,13 +23,18 @@
 	<body>
 		<h1>Cart</h1>
 		<?php
-			
+			include_once("includes/aShopCart.php");
 			//Have conditional that if user says checkout then session ends
 			//Should do so with sticky form
 			//Should also clear contents of cart.txt
 
 			$tempArray = $_SESSION['shopCart'];
-			
+			$userShopCart = new aShopCart();
+			$userShopCart->setItemArray($tempArray);
+			$userShopCart->showUserItems();
+
+			//print_r($_SESSION['shopCart']);
+			//session_destroy();
 		?>
 	</body>
 </html>
