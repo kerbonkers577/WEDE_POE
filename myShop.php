@@ -11,6 +11,7 @@
     //This will load the aShopCart.php and its functions
     //This script will manage layout and navigation
 
+    //Session should start on condition that user has logged in
     session_start();
 ?>
 <!DOCTYPE html>
@@ -21,6 +22,7 @@
         //Unsearilze object as to not destroy it
         $shopCart = new aShopCart();
         //Object serilization source: http://php.net/manual/en/language.oop5.serialization.php
+        //Add check to see if user has logged in
         $unserializedCart = file_get_contents('includes/cart.txt');
         $shopCart = unserialize($unserializedCart);
 
@@ -80,6 +82,7 @@
     </body>
 </html>
 <?php
+//Add conditional to see if the user has logged in
     $serializedCart = serialize($shopCart);
     file_put_contents('includes/cart.txt', $serializedCart);
 ?>
