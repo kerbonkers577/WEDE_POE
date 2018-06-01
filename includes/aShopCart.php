@@ -21,6 +21,16 @@
 
          }
 
+         function setItemArray()
+         {
+
+         }
+
+         function getItemArray()
+         {
+             return $userItems;
+         }
+
          function showItems()//Will load all items from items table
          {
             

@@ -13,6 +13,10 @@
 
     //Session should start on condition that user has logged in
     session_start();
+    if(isset($_SESSION['shopCart']) == false)
+    {
+        $_SESSION['shopCart'] = array();
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,6 +39,7 @@
         if(isset($_POST["pickedUserItem"]))
         {
             $shopCart->addItem($_POST["pickedUserItem"]);
+            array_push($_SESSION['shopCart'], $_POST["pickedUserItem"]);
         }
         else
         {

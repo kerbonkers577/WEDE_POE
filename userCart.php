@@ -27,6 +27,9 @@
 			//Have conditional that if user says checkout then session ends
 			//Should do so with sticky form
 			//Should also clear contents of cart.txt
+
+			$tempArray = $_SESSION['shopCart'];
+			
 		?>
 	</body>
 </html>
