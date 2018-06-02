@@ -59,7 +59,7 @@ will be referenced -->
 					echo $_SESSION["userID"];
 					echo $_SESSION["UserFName"];
 					
-					include("myShop.php");
+					echo "<a href=\"myShop.php\">Return to store</a>";
 					
 				}
 				else
