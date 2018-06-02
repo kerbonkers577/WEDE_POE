@@ -21,6 +21,7 @@ will be referenced -->
 	  </head>
 		<body class="body-custom">
 			<?php
+			session_start();
 			include("includes/DBConn.php");
 			function login()
 			{

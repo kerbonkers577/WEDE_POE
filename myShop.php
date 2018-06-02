@@ -59,7 +59,7 @@
             echo "<p>No one logged in</p>";
         }
 
-        echo "<pre>Test".$_SESSION["UserFName"]." with ID of ".$_SESSION["userID"]."<>";
+
         
         //$shopCart->addItem("Sock");
         $shopCart->showUserItems();
