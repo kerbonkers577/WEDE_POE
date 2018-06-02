@@ -24,17 +24,20 @@
 		<h1>Cart</h1>
 		<?php
 			include_once("includes/aShopCart.php");
+			//Check for login to write to database
 			//Have conditional that if user says checkout then session ends
 			//Should do so with sticky form
 			//Should also clear contents of cart.txt
+			//Need to write to database when user runs checkout
 
 			$tempArray = $_SESSION['shopCart'];
 			$userShopCart = new aShopCart();
 			$userShopCart->setItemArray($tempArray);
 			$userShopCart->showUserItems();
 
-			//print_r($_SESSION['shopCart']);
-			//session_destroy();
+			echo "<a href=\"myShop.php\">Continue Browsing</a>";
+
+			
 		?>
 	</body>
 </html>

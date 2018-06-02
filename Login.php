@@ -49,12 +49,18 @@ will be referenced -->
 
 				if(strcmp(trim($result["Password"]),md5($_POST['password'])) == 0)
 				{
-					$user = mysqli_fetch_assoc(query($myConn, "SELECT FName,LName,Email FROM tbl_User where Email like '".$_POST["email"]."'"));
+					$user = mysqli_fetch_assoc(query($myConn, "SELECT ID,FName,LName,Email FROM tbl_User where Email like '".$_POST["email"]."'"));
 					//print_r($user);
 					$_SESSION["UserFName"] = $user["FName"];
 					$_SESSION["UserLName"] = $user["LName"];
 					$_SESSION["UserEmail"] = $user["Email"];
-					include("user_page.php");
+					//Have session variable to store who is logged in and if the user is logged in
+					$_SESSION["userID"] = $user["ID"];
+					echo $_SESSION["userID"];
+					echo $_SESSION["UserFName"];
+					
+					include("myShop.php");
+					
 				}
 				else
 				{

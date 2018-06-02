@@ -48,10 +48,24 @@
         {
             echo "Not seen";
         }
+
+        if(isset($_SESSION["userID"]))
+        {
+            echo "User has ID of ". $_SESSION["userID"];
+            echo "User has ID of ". $_SESSION["UserFName"];
+        }
+        else
+        {
+            echo "<p>No one logged in</p>";
+        }
+
+        echo "<pre>Test".$_SESSION["UserFName"]." with ID of ".$_SESSION["userID"]."<>";
         
         //$shopCart->addItem("Sock");
         $shopCart->showUserItems();
         ?>
+
+        <a href="Login.php">Login</a>
 
         <!--Builds the table from the items-->
         <table id="table2">
