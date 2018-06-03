@@ -47,8 +47,7 @@
 			}
 			
 			echo "<a href=\"myShop.php\">Continue Browsing</a>";
-
-			session_destroy();			
+			
 		?>
 	</body>
 </html>

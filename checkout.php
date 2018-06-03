@@ -10,16 +10,19 @@
     
     //write to database here
     session_start();
+  
+    
     include_once("includes/DBConn.php");
 
+
     $aConnection = connect();
-    echoHostInfo($aConnection);
+    echo echoHostInfo($aConnection);
+    
 
-    echo $_SESSION["userID"];
-    //$orderQuery = "INSERT INTO tbl_order
-    //                VALUES (null, ".$_SESSION["userID"].")";
+    $orderQuery = "INSERT INTO tbl_order
+                    VALUES (null, ".$_SESSION["userID"].")";
 
-    //query($aConnection, $orderQuery);
+    query($aConnection, $orderQuery);
     //Get last order insert id to act as order_item Order_id
     closeConnection($aConnection);
     session_destroy();
