@@ -44,19 +44,19 @@ will be referenced -->
 			{
 				//print_r($_POST);
 				$myConn = connect();
-				$result = mysqli_fetch_assoc(query($myConn, "SELECT Password FROM tbl_User where Email like '".$_POST["email"]."'"));
+				$result = mysqli_fetch_assoc(query($myConn, "SELECT Password FROM tbl_customer where Email like '".$_POST["email"]."'"));
 				//print_r($result);
 
 
 				if(strcmp(trim($result["Password"]),md5($_POST['password'])) == 0)
 				{
-					$user = mysqli_fetch_assoc(query($myConn, "SELECT ID,FName,LName,Email FROM tbl_User where Email like '".$_POST["email"]."'"));
+					$user = mysqli_fetch_assoc(query($myConn, "SELECT Customer_ID,FName,LName,Email FROM tbl_customer where Email like '".$_POST["email"]."'"));
 					//print_r($user);
 					$_SESSION["UserFName"] = $user["FName"];
 					$_SESSION["UserLName"] = $user["LName"];
 					$_SESSION["UserEmail"] = $user["Email"];
 					//Have session variable to store who is logged in and if the user is logged in
-					$_SESSION["userID"] = $user["ID"];
+					$_SESSION["userID"] = $user["Customer_ID"];
 					echo $_SESSION["userID"];
 					echo $_SESSION["UserFName"];
 					
@@ -76,4 +76,4 @@ will be referenced -->
 			?>
 
   </body>
-	</html>
+</html>

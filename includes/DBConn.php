@@ -11,7 +11,7 @@
 
 	function connect()
 	{
-		$myConn = new mysqli("127.0.0.1", "root", "", "test");
+		$myConn = new mysqli("127.0.0.1", "root", "", "wede_task_2");
 
 		if($myConn->connect_errno)
 		{

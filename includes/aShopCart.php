@@ -28,7 +28,7 @@
 
          function getItemArray()
          {
-             return $userItems;
+             return $this->userItems;
          }
 
          function showItems()//Will load all items from items table

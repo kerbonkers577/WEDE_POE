@@ -19,7 +19,6 @@
         $_SESSION['shopCart'] = array();
     }
 
-    print_r($_SESSION['shopCart']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,21 +31,25 @@
         //Add check to see if user has logged in
         $unserializedCart = file_get_contents('includes/cart.txt');
         $shopCart = unserialize($unserializedCart);
-
         
         if($shopCart == null)
         {
             $shopCart = new aShopCart();
+        }
+        else
+        {
+            $_SESSION['shopCart'] = $shopCart->getItemArray();
         }
         
         if(isset($_POST["pickedUserItem"]))
         {
             $shopCart->addItem($_POST["pickedUserItem"]);
             array_push($_SESSION['shopCart'], $_POST["pickedUserItem"]);
+            $_POST["pickedUserItem"] = "";
         }
         else
         {
-            echo "Not seen";
+            echo "No new item added";
         }
 
         if(isset($_SESSION["userID"]))
