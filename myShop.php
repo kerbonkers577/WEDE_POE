@@ -44,8 +44,9 @@
         
         if(isset($_POST["pickedUserItem"]))
         {
-            $shopCart->addItem($_POST["pickedUserItem"]);
+            $shopCart->addItem($_POST["pickedUserItem"], $_POST["quantity"]);
             array_push($_SESSION['shopCart'], $_POST["pickedUserItem"]);
+            print_r($shopCart->getItemArray());
             $_POST["pickedUserItem"] = "";
         }
         else
@@ -104,7 +105,7 @@
                     echo "<td class=\"itemSetup\"> ". $itemResult["Price"]." </td>";
                     echo "<td class=\"itemSetup\"> ". $itemResult["Quantity"]." </td>";
                     echo "<td class=\"itemSetup\"><img src=\"images\\". $itemResult["img"]."\" height=\"75\" width=\"75\"/></td>";
-                    echo "<td class=\"itemSetup\"><form action=\"myShop.php\" method=\"post\"><input type=\"submit\" value=\"&#128722\"/><input type=\"hidden\" name=\"pickedUserItem\" value=\"". $itemResult["Item_ID"]."\"></form></td>";
+                    echo "<td class=\"itemSetup\"><form action=\"myShop.php\" method=\"post\"><input type=\"submit\" value=\"&#128722\"/><input type=\"hidden\" name=\"pickedUserItem\" value=\"". $itemResult["Item_ID"]."\"><input type=\"hidden\" name=\"quantity\" value=\"1\"></form></td>";
                     echo "</tr>";
                 }
 
