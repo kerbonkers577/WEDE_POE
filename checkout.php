@@ -22,8 +22,9 @@
     $orderQuery = "INSERT INTO tbl_order
                     VALUES (null, ".$_SESSION["userID"].")";
 
-    query($aConnection, $orderQuery);
     //Get last order insert id to act as order_item Order_id
+    $orderID = mysqli_fetch_assoc(query($aConnection, $orderQuery));
+    
 
     $userCart = array();
 
