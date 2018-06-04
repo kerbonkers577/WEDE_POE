@@ -24,6 +24,17 @@
 
     query($aConnection, $orderQuery);
     //Get last order insert id to act as order_item Order_id
+
+    $userCart = array();
+
+    if(isset($_SESSION['shopCart']))
+    {
+      $userCart = $_SESSION['shopCart'];
+    }
+    else
+    {
+      echo "No cart available";
+    }
     closeConnection($aConnection);
     session_destroy();
 	?>
