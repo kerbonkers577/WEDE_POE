@@ -24,7 +24,6 @@
 		<h1>Cart</h1>
 		<?php
 			include_once("includes/aShopCart.php");
-			//session_start();
 			//Check for login to write to database
 			//Have conditional that if user says checkout then session ends
 			//Should do so with sticky form

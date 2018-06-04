@@ -30,11 +30,18 @@
     if(isset($_SESSION['shopCart']))
     {
       $userCart = $_SESSION['shopCart'];
+      foreach($userCart as $item)
+      {
+        
+      }
     }
     else
     {
       echo "No cart available";
     }
+
+    
+
     closeConnection($aConnection);
     session_destroy();
 	?>
