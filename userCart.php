@@ -17,7 +17,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="CSS/bootstrap.min.css"/>
+	
+    <link href="CSS/CustomLogin.css" rel="stylesheet" type="text/css"/>
+    
 	<title>UserCart</title>
 </head>
 	<body>
@@ -30,19 +32,19 @@
 			//Should also clear contents of cart.txt
 			//Need to write to database when user runs checkout
 			
-			$tempArray = $_SESSION['shopCart'];
+			$tempCart = $_SESSION['shopCart'];
 			$userShopCart = new aShopCart();
-			$userShopCart->setItemArray($tempArray);
+			$userShopCart->setItemArray($tempCart);
 			$userShopCart->showUserItems();
 			
 			if(isset($_SESSION["userID"]))
 			{
-				echo "<a href=\"checkout.php\">Checkout</a>";
+				echo "<a href=\"checkout.php\">Checkout</a></br>";
 			}
 			else
 			{
-				echo "<p>Please login to checkout your cart</p>";
-				echo "<a href=\"Login.php\">Login</a>";
+				echo "<p>Please login to checkout your cart</p></br>";
+				echo "<a href=\"Login.php\">Login</a></br>";
 			}
 			
 			echo "<a href=\"myShop.php\">Continue Browsing</a>";

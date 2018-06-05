@@ -13,35 +13,27 @@
   
     
     include_once("includes/DBConn.php");
-
+    include_once("includes/aShopCart.php");
 
     $aConnection = connect();
-    echo echoHostInfo($aConnection);
+    
     
 
     $orderQuery = "INSERT INTO tbl_order
                     VALUES (null, ".$_SESSION["userID"].")";
 
-    query($aConnection, $orderQuery);
     //Get last order insert id to act as order_item Order_id
+    query($aConnection, $orderQuery);
+    $orderID = $aConnection->insert_id;
+    echo "<p> Your Order ID is ".$orderID."</p>";
 
-    $userCart = array();
-
-    if(isset($_SESSION['shopCart']))
-    {
-      $userCart = $_SESSION['shopCart'];
-      foreach($userCart as $item)
-      {
-        
-      }
-    }
-    else
-    {
-      echo "No cart available";
-    }
+    $userCartArray = $_SESSION['shopCart'];
+    $userCart = new aShopCart();
+    $userCart->setItemArray($userCartArray);
+    $userCart->checkout($orderID);
 
     
-
+    file_put_contents("includes/cart.txt", "");
     closeConnection($aConnection);
     session_destroy();
 	?>

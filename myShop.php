@@ -22,6 +22,9 @@
 ?>
 <!DOCTYPE html>
 <html>
+    <head>
+    <link href="CSS/CustomLogin.css" rel="stylesheet" type="text/css"/>
+    </head>
     <body>
         <?php
         include_once("includes/aShopCart.php");
@@ -45,32 +48,34 @@
         if(isset($_POST["pickedUserItem"]))
         {
             $shopCart->addItem($_POST["pickedUserItem"], $_POST["quantity"]);
-            array_push($_SESSION['shopCart'], $_POST["pickedUserItem"]);
-            print_r($shopCart->getItemArray());
+            //array_push($_SESSION['shopCart'], $_POST["pickedUserItem"]);
+            //print_r($shopCart->getItemArray());
             $_POST["pickedUserItem"] = "";
         }
         else
         {
-            echo "No new item added";
+            //echo "No new item added";
         }
 
         if(isset($_SESSION["userID"]))
         {
-            echo "User has ID of ". $_SESSION["userID"];
-            echo "User has ID of ". $_SESSION["UserFName"];
+            //echo "User has ID of ". $_SESSION["userID"];
+            //echo "User has ID of ". $_SESSION["UserFName"];
         }
         else
         {
-            echo "<p>No one logged in</p>";
+            //echo "<p>No one logged in</p>";
         }
 
 
         
         //$shopCart->addItem("Sock");
-        $shopCart->showUserItems();
+        //$shopCart->showUserItems();
+        echo "<a href=\"Login.php\">Login</a></br>";
+        echo "</br><a href=\"userCart.php\">Show Cart</a></br>"
         ?>
 
-        <a href="Login.php">Login</a>
+        
 
         <!--Builds the table from the items-->
         <table id="table2">
@@ -79,7 +84,7 @@
                 </tr>
                 <tr>
                     <th class="itemSetup">Item</th>
-                    <thclass="itemSetup">Price</th>
+                    <th class="itemSetup">Price</th>
                     <th class="itemSetup">Quantity</th>
                     <th class="itemSetup">Image</th>
                     <th class="itemSetup">Add to Cart</th>
@@ -90,7 +95,7 @@
                 $itemColumnCount = "SELECT COUNT(*) as numOfRows from tbl_Item"; 
                 $itemFillConn = connect();
                 $CountResult = mysqli_fetch_assoc(query($itemFillConn, $itemColumnCount));
-                print_r($CountResult);
+                //print_r($CountResult);
 
                 for($i = 0; $i < $CountResult["numOfRows"]; $i++)
                 {
@@ -113,7 +118,7 @@
             ?></table>
         
         
-        <a href="userCart.php">Show Cart</a>
+            </br><a href="userCart.php">Show Cart</a></br>
 
         
     </body>

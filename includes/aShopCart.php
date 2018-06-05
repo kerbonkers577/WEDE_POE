@@ -72,7 +72,7 @@
             }
             else
             {
-                $this->userItems[$itemToAdd] = $quantity;
+                $this->userItems[$itemToAdd] = 1;
             }
             
          }
@@ -87,7 +87,9 @@
             echo "<table>";
             echo "<tr>";
             echo "<th>Item</th>";
+            echo "<th>Price Per Item</th>";
             echo "<th>Quantity Ordered</th>";
+            echo "<th>Total</th>";
             echo "</tr>";
             foreach ($this->userItems as $item => $quantity)
             {
@@ -95,10 +97,29 @@
                 $result = mysqli_fetch_assoc(query($conn, $query));
                 echo "<tr>";
                 echo "<td>".$result["Item_Name"]."</td>";
+                echo "<td>".$result["Price"]."</td>";
                 echo "<td>".$quantity."</td>";
+                echo "<td>".($result["Price"] * $quantity)."</td>";
                 echo "</tr>";
             }
             echo "</table>";
+         }
+
+         function checkout($orderID)
+         {
+             $conn = connect();
+            foreach ($this->userItems as $item => $quantity)
+            {
+                $query = "SELECT * FROM tbl_Item where Item_ID = " .$item;
+                $result = mysqli_fetch_assoc(query($conn, $query));
+                $itemIDToInsert = $result["Item_ID"];
+                $itemRefPrice = $result["Price"];
+                $totalPrice = $result["Price"] * $quantity;
+
+                $InsertQuery = "INSERT INTO tbl_order_item 
+                                VALUES (null, ".$orderID.",".$itemIDToInsert.",".$quantity.",".$itemRefPrice.",".$totalPrice.")";
+                query($conn, $InsertQuery);
+            }
          }
 
 
