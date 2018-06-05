@@ -60,7 +60,8 @@ will be referenced -->
 					echo $_SESSION["userID"];
 					echo $_SESSION["UserFName"];
 					
-					echo "<a href=\"myShop.php\">Return to store</a>";
+					echo "<a href=\"myShop.php\">Return to store</a></br>";
+					echo "<a href=\"Admin.php\">Admin Page</a>";
 					
 				}
 				else

@@ -72,7 +72,7 @@
             }
             else
             {
-                $this->userItems[$itemToAdd] = $quantity;
+                $this->userItems[$itemToAdd] = 1;
             }
             
          }
@@ -107,6 +107,7 @@
 
          function checkout($orderID)
          {
+             $conn = connect();
             foreach ($this->userItems as $item => $quantity)
             {
                 $query = "SELECT * FROM tbl_Item where Item_ID = " .$item;
@@ -115,7 +116,9 @@
                 $itemRefPrice = $result["Price"];
                 $totalPrice = $result["Price"] * $quantity;
 
-                $InsertQuery
+                $InsertQuery = "INSERT INTO tbl_order_item 
+                                VALUES (null, ".$orderID.",".$itemIDToInsert.",".$quantity.",".$itemRefPrice.",".$totalPrice.")";
+                query($conn, $InsertQuery);
             }
          }
 
